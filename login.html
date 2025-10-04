@@ -1,34 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - 3191Bet</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-  <div class="logo">3191<span class="subname">Bet</span></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="register.html">Cadastro</a>
-  </nav>
-</header>
-
-<main class="form-section">
-  <h2>Login de Usuário</h2>
-  <form id="login-form">
-    <input type="email" placeholder="Email" required>
-    <input type="password" placeholder="Senha" required>
+<form id="login-form">
+    <input type="email" placeholder="Email" required name="email">
+    <input type="password" placeholder="Senha" required name="password">
     <button type="submit" class="glow-btn">Entrar</button>
-  </form>
-  <p>Não possui conta? <a href="register.html">Cadastre-se</a></p>
-</main>
+</form>
 
-<footer>
-  <p>&copy; 2025 3191Bet - Todos os direitos reservados</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+<script>
+const form = document.getElementById('login-form');
+form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    const res = await fetch('/login', {
+        method: 'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    if(json.success) window.location = '/index.html';
+    else alert(json.message);
+});
+</script>
