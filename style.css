@@ -1,4 +1,4 @@
-/* Fundo e cores gerais */
+/* ===================== Fundo e cores gerais ===================== */
 body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
@@ -7,6 +7,7 @@ body {
     color: #fff;
 }
 
+/* ===================== Header e Navegação ===================== */
 header {
     display: flex;
     justify-content: space-between;
@@ -45,7 +46,7 @@ nav a:hover {
     color: #ff7a00;
 }
 
-/* Hero banner */
+/* ===================== Hero / Banner ===================== */
 .hero {
     padding: 100px 20px;
     text-align: center;
@@ -64,6 +65,7 @@ nav a:hover {
     color: #fff;
 }
 
+/* ===================== Botões ===================== */
 .glow-btn {
     padding: 15px 35px;
     font-size: 18px;
@@ -83,7 +85,7 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Formulários */
+/* ===================== Formulários ===================== */
 input {
     padding: 10px;
     margin: 10px 0;
@@ -92,7 +94,7 @@ input {
     width: 250px;
 }
 
-/* Sessão de slots */
+/* ===================== Sessões / Cards ===================== */
 .games-section, .promo-section, .profile-section, .form-section {
     padding: 50px 20px;
     text-align: center;
@@ -131,7 +133,7 @@ input {
     gap: 5px;
 }
 
-/* Perfil usuário */
+/* ===================== Perfil do Usuário ===================== */
 .wallet-actions {
     display: flex;
     justify-content: center;
@@ -153,7 +155,7 @@ input {
     color: #ff7a00;
 }
 
-/* Footer */
+/* ===================== Footer ===================== */
 footer {
     padding: 20px;
     background-color: #1f1f1f;
@@ -162,7 +164,7 @@ footer {
     border-top: 2px solid #ff7a00;
 }
 
-/* Responsividade */
+/* ===================== Responsividade ===================== */
 @media (max-width: 768px) {
     header { flex-direction: column; padding: 20px; }
     nav { margin-top: 10px; }
