@@ -1,7 +1,7 @@
 <form id="register-form">
-    <input type="text" placeholder="Nome" required name="name">
-    <input type="email" placeholder="Email" required name="email">
-    <input type="password" placeholder="Senha" required name="password">
+    <input type="text" placeholder="Nome" name="name" required>
+    <input type="email" placeholder="Email" name="email" required>
+    <input type="password" placeholder="Senha" name="password" required>
     <button type="submit" class="glow-btn">Cadastrar</button>
 </form>
 
@@ -10,13 +10,15 @@ const form = document.getElementById('register-form');
 form.addEventListener('submit', async e => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form));
-    const res = await fetch('/register', {
-        method: 'POST',
+    const res = await fetch('/register',{
+        method:'POST',
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify(data)
     });
     const json = await res.json();
-    if(json.success) window.location = '/login.html';
-    else alert(json.message);
+    if(json.success) {
+        alert('Cadastro realizado com sucesso!');
+        window.location = '/login.html';
+    } else alert(json.message);
 });
 </script>
