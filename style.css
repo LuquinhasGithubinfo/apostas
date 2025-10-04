@@ -1,0 +1,77 @@
+/* Fundo com gradiente animado */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #0ff, #00f, #0a0, #0ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+header {
+    padding: 30px;
+    background: rgba(0,0,0,0.4);
+}
+
+h1 {
+    margin: 0;
+    font-size: 3em;
+    text-shadow: 0 0 10px #0ff;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 5px 0 20px;
+}
+
+.glow-btn {
+    padding: 15px 35px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    background: #0ff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #0ff;
+    transition: all 0.3s ease;
+}
+
+.glow-btn:hover {
+    box-shadow: 0 0 40px #0ff, 0 0 60px #00f;
+    transform: scale(1.1);
+}
+
+#treasure-result {
+    margin-top: 25px;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff;
+}
+
+.treasure-result {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.treasure-result.show {
+    opacity: 1;
+}
+
+footer {
+    padding: 20px;
+    background: rgba(0,0,0,0.4);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.9em;
+}
